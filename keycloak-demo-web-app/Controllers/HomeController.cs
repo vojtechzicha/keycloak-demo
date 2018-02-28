@@ -20,6 +20,7 @@ namespace keycloak_demo_web_app.Controllers
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
+            ViewData["FullName"] = User.Claims.Single(c => c.Type == "name").Value;
 
             return View();
         }
